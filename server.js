@@ -8,12 +8,16 @@ const HOST = "0.0.0.0";
 
 // App
 const app = express();
+
+// Settings
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-  res.sendFile("./views/home.html", { root: __dirname });
+  res.render("index");
 });
 
 app.get("/about", (req, res) => {
-  res.sendFile("./views/about.html", { root: __dirname });
+  res.render("about");
 });
 
 app.listen(PORT, HOST, () => {
