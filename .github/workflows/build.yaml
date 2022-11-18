@@ -25,3 +25,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: build and push docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ghcr.io/robinbaud/nodejs:latest
+          target: nodejs
