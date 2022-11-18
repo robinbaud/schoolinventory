@@ -15,7 +15,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
       - run: |
           npm ci
-          npm run build
 
   build-docker:
     runs-on: ubuntu-latest
